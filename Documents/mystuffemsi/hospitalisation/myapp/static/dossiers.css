@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+  --primary-color: #ffffff;
+  --secondary-color: #00ffbf;
+  --complimentary-color: #cdf7ed;
+  --contrast-color: #ccebc6;
+  --light-color: #e0e0e0;
+  }
+  
+  .container {
+    background: #97dbc1;
+    min-height: 100vh;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  nav a {
+      font-size: 40px;
+      color: #fff;
+      text-decoration: none;
+      padding: 20px;
+      text-align: center;
+  }
+  
+  nav {
+      position: fixed;
+      left: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100vh;
+      background: var(--secondary-color);
+  }
+  
+  section {
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      width: 0;
+      opacity: 0;
+      transition: all ease-in .5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  } 
+  
+  section h1 {
+      color: #fff;
+      font-size: 50px;
+      text-transform: uppercase;
+      opacity: 0;
+  }
+  
+  /* Styles applied on trigger */
+  section:target {
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+  }
+  
+  section:target h1 {
+      opacity: 0;
+      animation: 2s fadeIn forwards .5s;
+  }
+  
+  #first {
+    background:var(--primary-color);
+  }
+  #second {
+      background: var(--primary-color);
+  }
+  
+  #third {
+      background: var(--primary-color);
+  }
+  
+  #fourth {
+      background: var(--primary-color);
+  }
+
+  #add{
+    background: var(--primary-color);
+  }
+  #ch{
+    background: var(--primary-color);
+  }
+  
+  @keyframes fadeIn {
+      100% { opacity:1 }
+  }
+
+  .hover-text {
+    font-size: 24px;
+    text-decoration: underline;
+    font-size:30 0%;
+    color: white; /* Set the default text color to white */
+}
+
+/* Apply the hover effect when the mouse hovers over the text */
+.hover-text:hover {
+   
+    margin-left: 6%;
+    color: #90d3c8; /* Change the color on hover */
+    text-decoration: underline; /* Add an underline on hover */
+    cursor: pointer; /* Change the cursor to indicate the text is clickable */
+}
+
+a {
+    color: #f5f5f5; /* Set the link color to blue (#007bff) */
+    text-decoration: underline; /* Add an underline to the link */
+    /* Add any other link styles you want (e.g., font-size, font-weight, etc.) */
+}
+
+/* Change the underline color on hover */
+a:hover {
+    text-decoration-color: rgb(250, 246, 246); /* Set the underline color to red (#ff0000) on hover */
+    /* You can also add other hover styles, such as changing the text color */
+    color: #a7e6d8; /* Change the text color to red on hover */
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.container1{
+   
+    max-width: 800px;
+    background: #fff;
+    width: 800px;
+    margin-top: 20%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  .container .text{
+    text-align: center;
+    font-size: 41px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background: -webkit-linear-gradient(right, #56d8e4, #92c488, #56d8e4, #636a94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .container1 form{
+    padding: 30px 0 0 0;
+  }
+  .container1 form .form-row{
+    display: flex;
+    margin: 32px 0;
+  }
+  form .form-row .input-data{
+    width: 100%;
+    height: 40px;
+    margin: 0 20px;
+    position: relative;
+  }
+  form .form-row .textarea{
+    height: 70px;
+  }
+   #n{
+    margin-bottom: 10%;
+    
+  }
+  .input-data input,
+  .textarea textarea{
+    
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid rgba(0,0,0, 0.12);
+  }
+  .input-data input:focus ~ label, .textarea textarea:focus ~ label,
+  .input-data input:valid ~ label, .textarea textarea:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #3498db;
+  }
+  .textarea textarea{
+    resize: none;
+    padding-top: 10px;
+  }
+  .input-data label{
+    position: absolute;
+    pointer-events: none;
+    bottom: 10px;
+    font-size: 16px;
+    
+    transition: all 0.3s ease;
+  }
+  .textarea label{
+    width: 100%;
+    bottom: 40px;
+    background: #fff;
+  }
+  .input-data .underline{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+  }
+  .input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #3498db;
+    transform: scaleX(0);
+    
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .input-data input:focus ~ .underline:before,
+  .input-data input:valid ~ .underline:before,
+  .textarea textarea:focus ~ .underline:before,
+  .textarea textarea:valid ~ .underline:before{
+    transform: scale(1);
+  }
+  .submit-btn .input-data{
+    overflow: hidden;
+    height: 45px!important;
+    width: 25%!important;
+  }
+  .submit-btn .input-data .inner{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(right, #56d8e4, #94d3bb, #56d8e4, #8bb6da);
+    transition: all 0.4s;
+  }
+  .submit-btn .input-data:hover .inner{
+    left: 0;
+  }
+  .submit-btn .input-data input{
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 700px) {
+    .container1 .text{
+      font-size: 30px;
+    }
+    .container1 form{
+      padding: 10px 0 0 0;
+    }
+    .container1 form .form-row{
+      display: block;
+    }
+    form .form-row .input-data{
+      margin: 35px 0!important;
+    }
+    .submit-btn .input-data{
+      width: 40%!important;
+    }
+  }
+
+
+
+ 
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .cta {
+    position: relative;
+    margin: auto;
+    padding: 19px 22px;
+    transition: all 0.2s ease;
+  }
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(255, 171, 157, 0.5);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+  }
+  .cta span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  .cta:hover:before {
+    width: 100%;
+    background: #ffab9d;
+  }
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  .cta:active {
+    transform: scale(0.96);
+  }
+
+
+
+  
+  
+ 
+  
+  *,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+  a:hover, a:focus {
+    color: #046a38;
+  }
+  
+  .container2 {
+    margin: 5% 3%;
+  }
+  @media (min-width: 48em) {
+    .container2 {
+      margin: 2%;
+    }
+  }
+  @media (min-width: 75em) {
+    .container2 {
+      margin: 2em auto;
+      max-width: 75em;
+    }
+  }
+  
+  .responsive-table {
+    width: 100%;
+    margin-bottom: 1.5em;
+    border-spacing: 0;
+  }
+  @media (min-width: 48em) {
+    .responsive-table {
+      font-size: 0.9em;
+    }
+  }
+  @media (min-width: 62em) {
+    .responsive-table {
+      font-size: 1em;
+    }
+  }
+  .responsive-table thead {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+  @media (min-width: 48em) {
+    .responsive-table thead {
+      position: relative;
+      clip: auto;
+      height: auto;
+      width: auto;
+      overflow: auto;
+    }
+  }
+  .responsive-table thead th {
+    background-color: #26890d;
+    border: 1px solid #86bc25;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+  }
+  .responsive-table thead th:first-of-type {
+    text-align: left;
+  }
+  .responsive-table tbody,
+  .responsive-table tr,
+  .responsive-table th,
+  .responsive-table td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  @media (min-width: 48em) {
+    .responsive-table tr {
+      display: table-row;
+    }
+  }
+  .responsive-table th,
+  .responsive-table td {
+    padding: 0.5em;
+    vertical-align: middle;
+  }
+  @media (min-width: 30em) {
+    .responsive-table th,
+  .responsive-table td {
+      padding: 0.75em 0.5em;
+    }
+  }
+  @media (min-width: 48em) {
+    .responsive-table th,
+  .responsive-table td {
+      display: table-cell;
+      padding: 0.5em;
+    }
+  }
+  @media (min-width: 62em) {
+    .responsive-table th,
+  .responsive-table td {
+      padding: 0.75em 0.5em;
+    }
+  }
+  @media (min-width: 75em) {
+    .responsive-table th,
+  .responsive-table td {
+      padding: 0.75em;
+    }
+  }
+  .responsive-table caption {
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  @media (min-width: 48em) {
+    .responsive-table caption {
+      font-size: 1.5em;
+    }
+  }
+  .responsive-table tfoot {
+    font-size: 0.8em;
+    font-style: italic;
+  }
+  @media (min-width: 62em) {
+    .responsive-table tfoot {
+      font-size: 0.9em;
+    }
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody {
+      display: table-row-group;
+    }
+  }
+  .responsive-table tbody tr {
+    margin-bottom: 1em;
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody tr {
+      display: table-row;
+      border-width: 1px;
+    }
+  }
+  .responsive-table tbody tr:last-of-type {
+    margin-bottom: 0;
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody tr:nth-of-type(even) {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+  .responsive-table tbody th[scope=row] {
+    background-color: #26890d;
+    color: white;
+  }
+  @media (min-width: 30em) {
+    .responsive-table tbody th[scope=row] {
+      border-left: 1px solid #86bc25;
+      border-bottom: 1px solid #86bc25;
+    }
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody th[scope=row] {
+      background-color: transparent;
+      color: #000001;
+      text-align: left;
+    }
+  }
+  .responsive-table tbody td {
+    text-align: right;
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody td {
+      border-left: 1px solid #86bc25;
+      border-bottom: 1px solid #86bc25;
+      text-align: center;
+    }
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody td:last-of-type {
+      border-right: 1px solid #86bc25;
+    }
+  }
+  .responsive-table tbody td[data-type=currency] {
+    text-align: right;
+  }
+  .responsive-table tbody td[data-title]:before {
+    content: attr(data-title);
+    float: left;
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  @media (min-width: 30em) {
+    .responsive-table tbody td[data-title]:before {
+      font-size: 0.9em;
+    }
+  }
+  @media (min-width: 48em) {
+    .responsive-table tbody td[data-title]:before {
+      content: none;
+    }
+  }

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    
+    
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@200&family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+{% load static %}
+    <title>Default Title</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}">
+</head>
+<body>
+
+    
+    <nav>
+        <a href="#first"><i class="far fa-user"></i></a>
+        <a href="#second"><i class="fas fa-briefcase"></i></a>
+        <a href="#third"><i class="far fa-file"></i></a>
+        <a href="#hna"><i class="far fa-address-card"></i></a>
+      </nav>
+     
+     
+     <div class= 'container' style='background: #e4ebe8'> 
+        <br><br><br><br> <br><br><br><br> <h4 style='margin-left:42%'> {{Hmessage}} </h4>
+        <br><br><br><br> <br><br><br><br> <h4 style='margin-left:42%'> {{gmessage}} </h4>
+        <br><br><br><br> <br><br><br><br> <h4 style='margin-left:42%'> {{dmessage}} </h4>
+       <section id= 'first'>
+        <a href="{% url 'logout' %}" class="cta">
+            <span>Deconnectez Vous</span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </a>
+       </section>
+    
+       <section id= 'second'>
+       
+        <a href="#add" class="cta">
+            <span>  Ouvrir un nouveau Dossier D'hospitalisation </span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+            
+          </a>
+          
+       </section>
+       
+       <section id= 'add'>
+        <div class="container1">
+       
+            <div class="text">
+               Dossier D'hospitalisation
+            </div>
+            <form action="{% url 'addhosp' %}" method="POST">
+                {% csrf_token %}
+               <div class="form-row">
+                  <div class="input-data">
+                     <input type="text" name='service' required>
+                     <div class="underline"></div>
+                     <label for=""><i style='font-size:20px' class='fas'>&#xf0f0;</i> Service</label>
+                  </div>
+                  <div class="input-data">
+                     <input type="text"  name='entry_number' required>
+                     <div class="underline"></div>
+                     <label for=""><i style='font-size:20px' class='fas'>&#xf304;</i> N° d entree </label>
+                  </div>
+
+               </div>
+
+               <div class="form-row">
+                <div class="input-data">
+                   <input type="text" name='chambre'  required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf52b;</i> chambre</label>
+                </div>
+                
+                <div class="input-data">
+                   <input type="text" name='lit' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf236;</i>
+                     Lit</label>
+                </div>
+             </div>
+
+               <div class="form-row">
+                  <div class="input-data">
+                     <input type="text" name='first_name' required>
+                     <div class="underline"></div>
+                     <label for=""><i style='font-size:20px' class='fas'>&#xf406;</i> Prenom</label>
+                  </div>
+                  <div class="input-data">
+                     <input type="text" name='last_name' required>
+                     <div class="underline"></div>
+                     <label for=""><i style='font-size:20px' class='fas'>&#xf66b;</i>
+                        Nom</label>
+                  </div>
+               </div>
+
+
+               <div class="form-row">
+                <div class="input-data">
+                   <input type="text" name='cin_number' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf2bb;</i>
+                     N° CIN</label>
+                </div>
+                <div class="input-data">
+                    <i style='font-size:20px' class='far'>&#xf073;</i>  <label for="date_field">  Date de naissance:</label>
+                    <input type="date" id="date_field" name="date_of_birth" required>
+                   <div class="underline"></div>
+                
+                </div>
+             </div>
+             <div class="form-row">
+                <div class="input-data">
+                   <input type="text" name='sex' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf228;</i> SEXE</label>
+                </div>
+                <div class="input-data">
+                   <input type="text" name='telephone' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf095;</i> Telephone</label>
+                </div>
+             </div>
+
+             <div class="form-row">
+                <div class="input-data">
+                   <input type="text" name='address' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf015;</i> Adresse</label>
+                </div>
+                <div class="input-data">
+                   <input type="text" name='profession' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf64a;</i> Profession</label>
+                </div>
+             </div>
+
+             <div class="form-row">
+                <div class="input-data">
+                   <input type="text" name='marital_status' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf7bd;</i> Situation familiale</label>
+                </div>
+                <div class="input-data">
+                   <input type="text" name='children_number' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf0c0;</i> Nbre d'enfants</label>
+                </div>
+             </div>
+
+             
+             <div class="form-row">
+                <div class="input-data">
+                   <input type="text" name='emergency_contact' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf4fc;</i> Personne a prevenir en cas de besoin </label>
+                </div>
+                <div class="input-data">
+                   <input type="text" name='contact_address' required>
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='fas'>&#xf3c5;</i>
+                     Son adresse </label>
+                </div>
+                <div class="input-data">
+                    <input type="data" name='contact_phone' required>
+                    <div class="underline"></div>
+                    <label for=""><i style='font-size:20px' class='fas'>&#xf095;</i>  Tel</label>
+                 </div>
+             </div>
+
+
+
+
+             <div class="form-row">
+                <div class="input-data textarea">
+                    <label for="date_field">Date:</label>
+                    <input type="date" id="date_field" name="date_of_entry" required>
+
+                   <div class="underline"></div>
+                   <label for=""><i style='font-size:20px' class='far'>&#xf073;</i> Date dentree</label>
+                   <br />
+                   <div class="form-row submit-btn">
+                      <div class="input-data" id="n">
+                         <div class="inner"></div>
+                         <input type="submit" value="submit">
+                      </div>
+                   </div>
+             </form>
+             </div>
+         
+       </section>
+       
+
+
+
+       <section id= 'hna'>
+         <a href="#cin" class="cta">
+             <span> chercher par CIN </span>
+             <svg width="13px" height="10px" viewBox="0 0 13 10">
+               <path d="M1,5 L11,5"></path>
+               <polyline points="8 1 12 5 8 9"></polyline>
+             </svg>
+           </a>
+        </section>
+
+      <section id= 'third'>
+        <a href="{% url 'Adds' %}#ch" class="cta">
+            <span> chercher les dossiers</span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </a>
+       </section>
+
+     
+      <section id= "ch">
+      
+        <div class="container2">
+            <table class="responsive-table">
+              <caption>Les Dossiers D'hospitalisation des Patients</caption>
+              <thead>
+                <tr>
+                  <th scope="col">N° CIN</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prenom</th>
+                  <th scope="col">date naissance</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Lit</th>
+                  <th scope="col">Telephone</th>
+                  <th scope="col">Sexe</th>
+                  <th scope="col">Options</th>
+
+                  
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <td colspan="7">Sources: <a href="http://en.wikipedia.org/wiki/List_of_highest-grossing_animated_films" rel="external">Wikipedia</a> &amp; <a href="http://www.boxofficemojo.com/genres/chart/?id=animation.htm" rel="external">Box Office Mojo</a>. Data is current as of March 31, 2021.</td>
+                </tr>
+              </tfoot>
+              <tbody>
+                {% for h in hosp %}   
+                <tr>
+                  <th scope="row">{{h.cin_number}}</th>
+                  <td data-title="Studio">{{h.last_name}}</td>
+                  <td data-title="Worldwide Gross" data-type="currency">{{h.first_name}}</td>
+                  <td data-title="Domestic Gross" data-type="currency">{{h.date_of_birth}}</td>
+                  <td data-title="International Gross" data-type="currency">{{h.service}}</td>
+                  <td data-title="Budget" data-type="currency">{{h.lit}}</td>
+                  <td data-title="Budget" data-type="currency">{{h.telephone}}</td>
+                  <td data-title="Budget" data-type="currency">{{h.sex}}</td>
+                  <td data-title="Budget" data-type="currency"><a href="{% url 'chercherdossier' hid=h.id %}" style="text-decoration: underline;"> Plus d'info</a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+       </section>
+
+
+
+
+       <style>
+         @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
+
+.search__container {
+        padding-top: 64px;
+    }
+
+.search__title {
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+        color: #ff8b88;
+    }
+
+.search__input {
+        width: 100%;
+        padding: 12px 24px;
+
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+        
+        color: #575756;
+        background-color: transparent;
+/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+ 
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #575756;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+.search__input::placeholder {
+            color: rgba(87, 87, 86, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+.search__input:hover,
+        .search__input:focus {
+            padding: 12px 0;
+            outline: 0;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #575756;
+            border-radius: 0;
+            background-position: 100% center;
+        }
+
+.credits__container {
+        margin-top: 24px;
+    }
+
+.credits__text {
+        text-align: center;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+.credits__link {
+        color: #ff8b88;
+        text-decoration: none;
+        transition: color 250ms ease-in;
+    }
+
+.credits__link:hover,
+        .credits__link:focus {
+            color: rgb(191, 137, 135);
+        }
+       </style>
+       <section  id= "cin" >
+         <form action="{% url 'details' %}#fourth" method="get">
+            {% csrf_token %}
+         <div class="search__container">
+            <p class="search__title">
+                Entrer le CIN 
+            </p>
+           <a> <input class="search__input" type="text" name="cin" placeholder="Search"> </a>
+        </div>
+      </form>  
+
+       </section>
+
+
+       <section id= "fourth">
+      
+         <div class="container2">
+             <table class="responsive-table">
+               
+               <caption>Le Dossier D'hospitalisation du Patient : {{h.first_name}} {{h.last_name}} </caption>
+               <thead> 
+                 <tr>
+                   <th scope="col">N° CIN</th>
+                   <th scope="col">Nom</th> 
+                   <th scope="col">date naissance</th>
+                   <th scope="col">Telephone</th>
+                   <th scope="col">Sexe</th>
+                   <th scope="col">address</th>
+                   <th scope="col">children_number</th>
+                  
+                  
+
+                 
+                   
+                 </tr>
+               </thead>
+             
+               <tbody>
+                 
+                 <tr>
+                   <th scope="row">{{h.cin_number}}</th>
+                   <td data-title="Studio">{{h.last_name}}</td>
+                   <td data-title="Domestic Gross" data-type="currency">{{h.date_of_birth}}</td>
+                   <td data-title="International Gross" data-type="currency">{{h.telephone}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.sex}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.address}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.children_number}}</td>
+                   
+                   
+
+                 </tr>
+                 
+               </tbody>
+             </table>
+
+
+
+
+             <table class="responsive-table">
+               
+               <thead> 
+                 <tr>
+                   
+                   <th scope="col">Chambre</th> 
+                   <th scope="col">profession</th>
+                   <th scope="col">Service</th>
+                   <th scope="col">Lit</th>
+                   <th scope="col">emergency contacts number</th>
+                   <th scope="col"> emergency contact</th> 
+                   <th scope="col">date of entry</th>
+                   <th scope="col">marital status</th> 
+ 
+                   
+                 </tr>
+               </thead>
+              
+               <tbody>
+                 
+                 <tr>
+                   
+                   <td data-title="Budget" data-type="currency">{{h.chambre}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.profession}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.service}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.lit}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.contact_phone}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.emergency_contact}}</td>
+            
+                   <td data-title="Budget" data-type="currency">{{h.date_of_entry}}</td>
+                   <td data-title="Budget" data-type="currency">{{h.marital_status}}</td>
+
+                 </tr>
+                 
+               </tbody>
+               <tfoot>
+                  <tr>
+                  </tr>
+                </tfoot>
+             </table>
+           </div>
+        </section>
+
+     </div>
+    
+</body>
+</html>  

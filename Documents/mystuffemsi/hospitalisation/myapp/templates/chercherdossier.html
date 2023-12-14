@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@200&family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.css' %}">
+    <title>Document</title>
+</head>
+<body style="background-color:#cdf7ed">
+    
+    <style>
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Style for the input-data container within side-by-side class to prevent vertical spacing */
+        .side-by-side .input-data {
+            width:400px;
+            margin-bottom: 0;
+        }
+    </style>
+   <a href="{% url 'menu' %}"> <i class="fa fa-angle-double-left" style="font-size:60px"></i></a>
+
+   <div class="container1">
+       
+    <div class="text">
+       Dossier D'hospitalisation
+    </div>
+    
+    <form action="{% url 'modifdossier' hid=h.id %}" method="POST">
+        {% csrf_token %}
+        
+       <div class="form-row">
+          <div class="input-data">
+             <input type="text" name='service' value="{{h.service}}" required>
+             <div class="underline"></div>
+             <label for=""><i style='font-size:20px' class='fas'>&#xf0f0;</i> Service</label>
+          </div>
+          <div class="input-data"> 
+             <input type="text"  name='entry_number'   value="{{h.entry_number}}" required>
+             <div class="underline"></div>
+             <label for=""><i style='font-size:20px' class='fas'>&#xf304;</i> N° d entree </label>
+          </div>
+
+       </div>
+
+       <div class="form-row">
+        <div class="input-data">
+           <input type="text" name='chambre'  value="{{h.chambre}}"  required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf52b;</i> chambre</label>
+        </div>
+        
+        <div class="input-data">
+           <input type="text" name='lit'  value="{{h.lit}}" required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf236;</i>
+             Lit</label>
+        </div>
+     </div>
+
+       <div class="form-row">
+          <div class="input-data">
+             <input type="text" name='first_name'  value="{{h.first_name}}" required>
+             <div class="underline"></div>
+             <label for=""><i style='font-size:20px' class='fas'>&#xf406;</i> Prenom</label>
+          </div>
+          <div class="input-data">
+             <input type="text" name='last_name' value="{{h.last_name}}"   required>
+             <div class="underline"></div>
+             <label for=""><i style='font-size:20px' class='fas'>&#xf406;</i>
+                Nom</label>
+          </div>
+       </div>
+
+
+       <div class="form-row">
+        <div class="input-data">
+           <input type="text" name='cin_number'  value="{{h.cin_number}}" required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf2bb;</i>
+             N° CIN</label>
+        </div>
+        <div class="input-data">
+            <i style='font-size:20px' class='far'>&#xf073;</i>  <label for="date_field">  Date de naissance:</label>
+            <input type="date" id="date_field"  value="{{h.date_of_birth|date:'Y-m-d'}}" name="date_of_birth" required>
+           <div class="underline"></div>
+        
+        </div>
+     </div>
+     <div class="form-row">
+        <div class="input-data">
+           <input type="text" name='sex' value="{{h.sex}}" required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf228;</i> SEXE</label>
+        </div>    
+        <div class="input-data">
+           <input type="text" name='telephone' value="{{h.telephone}}" required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf095;</i> Telephone</label>
+        </div>
+     </div>
+
+     <div class="form-row">
+        <div class="input-data">
+           <input type="text" name='address' value="{{h.address}}"  required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf015;</i> Adresse</label>
+        </div>
+        <div class="input-data">
+           <input type="text" name='profession' value="{{h.profession}}"  required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf64a;</i> Profession</label>
+        </div>
+     </div>
+
+     <div class="form-row">
+        <div class="input-data">
+           <input type="text" name='marital_status' value="{{h.marital_status}}" required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf7bd;</i> Situation familiale</label>
+        </div>
+        <div class="input-data">
+           <input type="text" name='children_number' value="{{h.children_number}}"  required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf0c0;</i> Nbre d'enfants</label>
+        </div>
+     </div>
+
+     
+     <div class="form-row">
+        <div class="input-data">
+           <input type="text" name='emergency_contact' value="{{h.emergency_contact}}"  required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf4fc;</i> Personne a prevenir en cas de besoin </label>
+        </div>
+        <div class="input-data">
+           <input type="text" name='contact_address' value="{{h.contact_address}}"  required>
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='fas'>&#xf3c5;</i>
+             Son adresse </label>
+        </div>
+        <div class="input-data">
+            <input type="data" name='contact_phone' value="{{h.contact_phone}}" required>
+            <div class="underline"></div>
+            <label for=""><i style='font-size:20px' class='fas'>&#xf095;</i>  Tel</label>
+         </div>
+     </div>
+
+
+
+
+     <div class="form-row">
+        <div class="input-data textarea">
+            <label for="date_field">Date:</label>
+            <input type="date" id="date_field"  value="{{h.date_of_entry|date:'Y-m-d'}}"  name="date_of_entry" required>
+
+           <div class="underline"></div>
+           <label for=""><i style='font-size:20px' class='far'>&#xf073;</i> Date dentree</label>
+           <br />
+
+           <div class="form-row submit-btn" style='width:500px' >
+            <div class="side-by-side">
+                <div class="input-data" id="n">
+                    <div class="inner"></div>
+                    <input type="submit" style='width:500px' value="Modifier">
+                </div>
+            </div>
+            <div class="side-by-side">
+                <div class="input-data" id="n">
+                    <div class="inner"></div>
+                    <a href="{% url 'delete_row' hid=h.id %}" class=""><input style='width:500px'  value="supprimer"></a>
+                </div>
+            </div>
+        </div>
+        
+ 
+
+     </form>
+    
+    
+   </section>
+   
+ 
+   
+</body>    
+</html>
