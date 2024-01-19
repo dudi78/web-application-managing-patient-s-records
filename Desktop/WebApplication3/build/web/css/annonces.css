@@ -1,0 +1,34 @@
+.annonces{
+
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+  width: 1350px;
+ 
+  background-color: rgb(94, 141, 125);
+
+}
+.card{
+  width: 26rem;
+ box-sizing: border-box;
+  margin-left: 2%;
+  margin: 1%;
+}
+.logo{
+ margin-top: 1%;
+  margin-left: 2%;
+  
+  width: 7%;
+  
+}
+.btn-success{
+   float: right;
+  margin-top: 2%;
+   margin-right: 2%;
+}
+.head{
+  height: 100px;
+  background-color: rgb(189, 223, 189);
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media="all" href="css/Login.css">
+    </head>
+    <body>
+         <div class="login-wrap">
+    <div class="login-html">
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+      
+      <div class="login-form">
+         <form action="Singin" method="Post">
+        <div class="sign-in-htm">
+         
+
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" type="text" name="username" class="input required">
+          </div>
+        
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password" name="password" class="input" data-type="password" required>
+          </div>
+         
+          <div class="group">
+            <input type="submit" class="button" value="Sign In" required>
+          </div>
+          <div class="hr"></div>
+         
+        </div>
+      </form>
+          <form action="Log" method="post">
+        <div class="sign-up-htm">
+       <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" name="user" type="text" class="input" required>
+          </div>
+          <div class="group">
+          <label for="user" class="label">nom</label>
+          <input id="user" type="text" name="nom" class="input" required>
+           </div>
+          <div class="group">
+          <label for="user" class="label">prenom</label>
+          <input id="user" type="text" name="prenom" class="input" required>
+        </div> 
+          <div class="group">
+            <label for="user" class="label">tel</label>
+            <input id="user" type="number"  name="tel" class="input" required>
+          </div>
+          <div class="group">
+            <label for="pass" class="label">gmail</label>
+            <input id="pass"  class="input"  name="gmail">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password"  name="motpass" class="input" data-type="password" required>
+          </div>
+         
+          <div class="group">
+            <input type="submit" class="button" value="Sign Up" >
+          </div>
+          <div class="hr"></div>
+         
+        </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  
+
+    </body>
+</html>

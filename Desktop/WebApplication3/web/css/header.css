@@ -1,0 +1,43 @@
+.header{
+  top: 0;
+  left: 0;
+  right: 0;
+
+  
+  height: 4vw;
+  margin: 1%;
+  margin-right: 9%;
+   background-color: #fffffe;
+    
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    
+    font-family: 'Playfair Display SC', serif;
+    box-sizing: border-box;
+   
+    
+}
+
+.mg{
+     width: 8em;
+}
+
+.nlinks{
+    margin-top: 3%;
+    text-decoration: none;
+    padding: 24px;
+    color:rgb(92, 104, 97);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    font-weight: 500;
+
+   
+   
+}
+.nlinks:hover{
+  
+    color: rgb(98, 143, 97);
+}
